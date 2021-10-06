@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="algoritmodefloyd.FXMLPrincipalController">
+   <left>
+      <VBox fx:id="vPainel" disable="true" prefHeight="363.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXComboBox fx:id="cbOrigem" labelFloat="true" onHiding="#clkChanged" prefHeight="25.0" prefWidth="163.0" promptText="Origem">
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </JFXComboBox>
+            <JFXComboBox fx:id="cbDestino" labelFloat="true" onHiding="#clkChanged" prefHeight="25.0" prefWidth="162.0" promptText="Destino">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </JFXComboBox>
+            <JFXTextField fx:id="tfCusto" labelFloat="true" promptText="Custo">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextArea fx:id="taPercurso" editable="false" labelFloat="true" prefHeight="71.0" prefWidth="140.0" promptText="Percurso">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </JFXTextArea>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <TableView fx:id="tvMatriz" disable="true" prefHeight="464.0" prefWidth="593.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="Vertice" prefWidth="50.0" text="-" visible="false" />
+          <TableColumn fx:id="CA" prefWidth="50.0" text="A" visible="false" />
+          <TableColumn fx:id="CB" prefWidth="50.0" text="B" visible="false" />
+            <TableColumn fx:id="CC" prefWidth="50.0" text="C" visible="false" />
+            <TableColumn fx:id="CD" prefWidth="50.0" text="D" visible="false" />
+            <TableColumn fx:id="CE" prefWidth="50.0" text="E" visible="false" />
+            <TableColumn fx:id="CF" prefWidth="50.0" text="F" visible="false" />
+            <TableColumn fx:id="CG" prefWidth="50.0" text="G" visible="false" />
+            <TableColumn fx:id="CH" prefWidth="50.0" text="H" visible="false" />
+            <TableColumn fx:id="CI" prefWidth="50.0" text="I" visible="false" />
+            <TableColumn fx:id="CJ" prefWidth="50.0" text="J" visible="false" />
+        </columns>
+      </TableView>
+   </center>
+   <top>
+      <VBox prefHeight="87.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: white;">
+               <children>
+                  <JFXButton fx:id="bAbrir" onAction="#clkAbrir" style="-fx-background-color: #4169E1;" text="Abrir Arquivo" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXTextField fx:id="tfNome" disable="true" editable="false" labelFloat="true" prefHeight="25.0" prefWidth="157.0" promptText="Arquivo aberto">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox fx:id="hMatriz" alignment="CENTER" disable="true" prefHeight="40.0" prefWidth="600.0">
+               <children>
+                  <JFXRadioButton fx:id="rbDistancia" onAction="#clkDistancia" selected="true" text="M.Distância">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="gp" />
+                     </toggleGroup></JFXRadioButton>
+                  <JFXRadioButton fx:id="rbSolucao" onAction="#clkSolucao" text="M.Solução" toggleGroup="$gp">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </JFXRadioButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>
